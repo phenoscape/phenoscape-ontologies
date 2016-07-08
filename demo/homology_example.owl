@@ -22,7 +22,7 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.org/phenoscape/demo/homology_example.owl">
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/homology.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2016-06-12/ext.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/ext.owl"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Added GCI homology axioms to &apos;alular digit&apos; and &apos;manual digit 1&apos;. These end up applying to the global versions of those terms because of &apos;only in taxon&apos; restrictions they have.</rdfs:comment>
     </owl:Ontology>
     
