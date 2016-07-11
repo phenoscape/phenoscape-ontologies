@@ -25,6 +25,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/ext.owl"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Added GCI homology axioms to &apos;alular digit&apos; and &apos;manual digit 1&apos;. These end up applying to the global versions of those terms because of &apos;only in taxon&apos; restrictions they have.</rdfs:comment>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Added GCI homology axioms to &apos;actinotrichium&apos; and &apos;ceratotrichium&apos;. The &quot;global&quot; term versions only work in one direction for homology queries.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bgee axiom example: &apos;incus bone&apos; to &apos;quadrate&apos;.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -37,6 +38,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
     
 
 
@@ -85,29 +92,47 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001463 -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt)"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012260"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0012260 -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0012260">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0012260">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt)"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001463"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_2000089 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2000089"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_4400001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_4400001"/>
     
 
 
