@@ -24,6 +24,7 @@
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/homology.owl"/>
         <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/ext.owl"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Added GCI homology axioms to &apos;alular digit&apos; and &apos;manual digit 1&apos;. These end up applying to the global versions of those terms because of &apos;only in taxon&apos; restrictions they have.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Added GCI homology axioms to &apos;actinotrichium&apos; and &apos;ceratotrichium&apos;. The &quot;global&quot; term versions only work in one direction for homology queries.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -44,6 +45,14 @@
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_HOM0000007">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in historical homology relationship with</rdfs:label>
     </rdf:Description>
+    
+
+
+    <!-- http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt) -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt)">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in historical homology relationship with (alt)</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -73,6 +82,32 @@
             </owl:Class>
         </owl:equivalentClass>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001463 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt)"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012260"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0012260 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0012260">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/phenoscape/demo/homology_example.owl#in_historical_homology_relationship_with_(alt)"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001463"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
     
 
 
@@ -124,6 +159,56 @@
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001463"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_2000089"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_HOM0000007"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_4400001"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7777"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_4400001"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7777"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_HOM0000007"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_2000089"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
