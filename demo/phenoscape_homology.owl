@@ -9,8 +9,6 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/phenoscape_homology.owl">
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homology Assertions</dc:description>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/eco.owl"/>
-        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/uberon/ext.owl"/>
     </owl:Ontology>
     
 
