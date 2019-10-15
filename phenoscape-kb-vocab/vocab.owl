@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/phenoscape/vocab.owl#"
+     xml:base="http://purl.org/phenoscape/vocab.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vocab="http://purl.org/phenoscape/vocab/">
+    <owl:Ontology rdf:about="http://purl.org/phenoscape/vocab.owl">
+        <owl:versionIRI rdf:resource="http://purl.org/phenoscape/vocab/releases/2019-10-15/vocab.owl"/>
+        <dc:creator rdf:resource="http://orcid.org/0000-0002-8688-6599"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phenoscape Project</dc:creator>
+        <dc:rights rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology holds classes, properties, and axioms used in the data model for the Phenoscape Knowledgebase (KB). In some cases these elements may be very specific to implementation details of the KB web application. In other cases a class or property may be included here as a placeholder, with the intent to migrate the concept to the proper community ontology once its utility is better understood. These factors contribute to the result that this ontology will appear to be a grab bag of sometimes unrelated concepts.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phenoscape Knowledgebase vocabulary</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#negation_of_class -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/phenoscape/vocab.owl#negation_of_class">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property relates a class to another class which is defined as its complement. This annotation is used by some ad hoc reasoning code in situations where it is not feasible to use a real reasoner that supports ObjectComplementOf.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negation of class</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#reflexive_part_of"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000184 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000184">
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000184"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/cdao.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_state</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000191 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CDAO_0000191">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/cdao.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongs_to_TU</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The axiom &quot;inverse (has_state) o belongs_to_TU o denotes SubPropertyOf denotes&quot; seems to be tripping up ELK, so it has been temporarily removed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">denotes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002314"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#phenotype_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002158 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002158">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homologous to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002202 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002202">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#reflexive_develops_from"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002314 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002314">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#involves"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres in part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002503 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002503">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#involves"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#phenotype_of"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">towards</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#annotated_gene -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#annotated_gene">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#annotated_organism -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#annotated_organism"/>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#annotated_taxon -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#annotated_taxon">
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#associated_with_gene -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#associated_with_gene"/>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#associated_with_taxon -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#associated_with_taxon"/>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#contains_clade -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#contains_clade">
+        <owl:inverseOf rdf:resource="http://purl.org/phenoscape/vocab.owl#subclade_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains clade</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#denotes_exemplar -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#denotes_exemplar">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_ancestor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_ancestor">
+        <owl:inverseOf rdf:resource="http://purl.org/phenoscape/vocab.owl#has_descendant"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has ancestor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_ancestor_to_members -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_ancestor_to_members">
+        <rdfs:domain rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#subclade_of"/>
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#has_progenitor"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has ancestor to members</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_descendant -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_descendant">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has descendant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_member -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_member">
+        <owl:inverseOf rdf:resource="http://purl.org/phenoscape/vocab.owl#member_of"/>
+        <rdfs:domain rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_part_inhering_in -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_part_inhering_in">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part inhering in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_phenotypic_profile -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_phenotypic_profile"/>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#has_progenitor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#has_progenitor">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#has_ancestor_to_members"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/phenoscape/vocab.owl#has_member"/>
+        <rdfs:domain rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates a clade to a somewhat hypothetical member organism that possesses traits which are ancestral to all members of the clade.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has progenitor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#implies_presence_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#implies_presence_of">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#implies_presence_of"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002202"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">implies presence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#involves -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#involves">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A very general relation used for a &quot;model-free&quot; tagging approach to annotation.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">involves</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#may_have_state_value -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#may_have_state_value">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000071"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CDAO_0000091"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relates a phylogenetic character to state values that may be held by CharacterStateDatums in a matrix. If generally useful this property could be migrated to CDAO.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">may have state value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#member_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#member_of">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:range rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#member_of"/>
+            <rdf:Description rdf:about="http://purl.org/phenoscape/vocab.owl#subclade_of"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#phenotype_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#phenotype_of">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002503"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phenotype of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#reflexive_develops_from -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#reflexive_develops_from">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reflexive develops from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#reflexive_part_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#reflexive_part_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reflexive part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#subclade_of -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/phenoscape/vocab.owl#subclade_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <rdfs:range rdf:resource="http://purl.org/phenoscape/vocab.owl#Clade"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subclade of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000071 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000071">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/cdao.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Character</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CDAO_0000091 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDAO_0000091">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/cdao.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CharacterStateDomain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#AnnotatedPhenotype -->
+
+    <owl:Class rdf:about="http://purl.org/phenoscape/vocab.owl#AnnotatedPhenotype">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A phenotypic quality exhibited by a particular organism in a described context, such as mutation or experimental manipulation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#Clade -->
+
+    <owl:Class rdf:about="http://purl.org/phenoscape/vocab.owl#Clade"/>
+    
+
+
+    <!-- http://purl.org/phenoscape/vocab.owl#PhenotypeAnnotation -->
+
+    <owl:Class rdf:about="http://purl.org/phenoscape/vocab.owl#PhenotypeAnnotation">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A statement that a gene is associated with an organism possessing a given phenotype, perhaps through mutation or experimental manipulation.</rdfs:comment>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://orcid.org/0000-0002-8688-6599 -->
+
+    <owl:NamedIndividual rdf:about="http://orcid.org/0000-0002-8688-6599">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James P. Balhoff</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

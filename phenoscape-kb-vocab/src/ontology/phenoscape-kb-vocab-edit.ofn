@@ -1,0 +1,301 @@
+Prefix(:=<http://purl.org/phenoscape/vocab.owl#>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(vocab:=<http://purl.org/phenoscape/vocab/>)
+
+
+Ontology(<http://purl.org/phenoscape/vocab.owl>
+<http://purl.org/phenoscape/vocab/SNAPSHOT/vocab.owl>
+Annotation(dc:creator <http://orcid.org/0000-0002-8688-6599>)
+Annotation(dc:creator "Phenoscape Project"^^xsd:string)
+Annotation(dc:rights <http://creativecommons.org/publicdomain/zero/1.0/>)
+Annotation(rdfs:comment "This ontology holds classes, properties, and axioms used in the data model for the Phenoscape Knowledgebase (KB). In some cases these elements may be very specific to implementation details of the KB web application. In other cases a class or property may be included here as a placeholder, with the intent to migrate the concept to the proper community ontology once its utility is better understood. These factors contribute to the result that this ontology will appear to be a grab bag of sometimes unrelated concepts."^^xsd:string)
+Annotation(rdfs:label "Phenoscape Knowledgebase vocabulary"^^xsd:string)
+
+Declaration(Class(<http://purl.obolibrary.org/obo/CDAO_0000071>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CDAO_0000091>))
+Declaration(Class(<http://purl.obolibrary.org/obo/OBI_0100026>))
+Declaration(Class(:AnnotatedPhenotype))
+Declaration(Class(:Clade))
+Declaration(Class(:PhenotypeAnnotation))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/CDAO_0000184>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/CDAO_0000191>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/IAO_0000219>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0000052>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002158>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002202>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002314>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002503>))
+Declaration(ObjectProperty(:annotated_gene))
+Declaration(ObjectProperty(:annotated_organism))
+Declaration(ObjectProperty(:annotated_taxon))
+Declaration(ObjectProperty(:associated_with_gene))
+Declaration(ObjectProperty(:associated_with_taxon))
+Declaration(ObjectProperty(:contains_clade))
+Declaration(ObjectProperty(:denotes_exemplar))
+Declaration(ObjectProperty(:has_ancestor))
+Declaration(ObjectProperty(:has_ancestor_to_members))
+Declaration(ObjectProperty(:has_descendant))
+Declaration(ObjectProperty(:has_member))
+Declaration(ObjectProperty(:has_part_inhering_in))
+Declaration(ObjectProperty(:has_phenotypic_profile))
+Declaration(ObjectProperty(:has_progenitor))
+Declaration(ObjectProperty(:implies_presence_of))
+Declaration(ObjectProperty(:involves))
+Declaration(ObjectProperty(:may_have_state_value))
+Declaration(ObjectProperty(:member_of))
+Declaration(ObjectProperty(:phenotype_of))
+Declaration(ObjectProperty(:reflexive_develops_from))
+Declaration(ObjectProperty(:reflexive_part_of))
+Declaration(ObjectProperty(:subclade_of))
+Declaration(NamedIndividual(<http://orcid.org/0000-0002-8688-6599>))
+Declaration(AnnotationProperty(dc:creator))
+Declaration(AnnotationProperty(dc:rights))
+Declaration(AnnotationProperty(:negation_of_class))
+############################
+#   Annotation Properties
+############################
+
+# Annotation Property: dc:creator (dc:creator)
+
+AnnotationAssertion(rdfs:isDefinedBy dc:creator <http://purl.org/dc/elements/1.1>)
+
+# Annotation Property: dc:rights (dc:rights)
+
+AnnotationAssertion(rdfs:isDefinedBy dc:rights <http://purl.org/dc/elements/1.1>)
+
+# Annotation Property: :negation_of_class (negation of class)
+
+AnnotationAssertion(rdfs:comment :negation_of_class "This property relates a class to another class which is defined as its complement. This annotation is used by some ad hoc reasoning code in situations where it is not feasible to use a real reasoner that supports ObjectComplementOf."^^xsd:string)
+AnnotationAssertion(rdfs:label :negation_of_class "negation of class"^^xsd:string)
+
+
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000050> (part of)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000050> "part of"^^xsd:string)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/BFO_0000050> :reflexive_part_of)
+InverseObjectProperties(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000051>)
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>)
+
+# Object Property: <http://purl.obolibrary.org/obo/BFO_0000051> (has part)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/BFO_0000051> "has part"^^xsd:string)
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>)
+
+# Object Property: <http://purl.obolibrary.org/obo/CDAO_0000184> (has_state)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/CDAO_0000184> <http://purl.obolibrary.org/obo/cdao.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CDAO_0000184> "has_state"^^xsd:string)
+InverseObjectProperties(<http://purl.obolibrary.org/obo/CDAO_0000184> ObjectInverseOf(<http://purl.obolibrary.org/obo/CDAO_0000184>))
+
+# Object Property: <http://purl.obolibrary.org/obo/CDAO_0000191> (belongs_to_TU)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/CDAO_0000191> <http://purl.obolibrary.org/obo/cdao.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CDAO_0000191> "belongs_to_TU"^^xsd:string)
+
+# Object Property: <http://purl.obolibrary.org/obo/IAO_0000219> (denotes)
+
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/IAO_0000219> "The axiom \"inverse (has_state) o belongs_to_TU o denotes SubPropertyOf denotes\" seems to be tripping up ELK, so it has been temporarily removed."^^xsd:string)
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/IAO_0000219> <http://purl.obolibrary.org/obo/iao.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000219> "denotes"^^xsd:string)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0000052> (inheres in)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0000052> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0000052> "inheres in"^^xsd:string)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0000052> <http://purl.obolibrary.org/obo/RO_0002314>)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0000052> :phenotype_of)
+FunctionalObjectProperty(<http://purl.obolibrary.org/obo/RO_0000052>)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002158> (homologous to)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0002158> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002158> "homologous to"^^xsd:string)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002202> (develops from)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0002202> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002202> "develops from"^^xsd:string)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002202> :reflexive_develops_from)
+TransitiveObjectProperty(<http://purl.obolibrary.org/obo/RO_0002202>)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002314> (inheres in part of)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/RO_0002314> <http://purl.obolibrary.org/obo/ro.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002314> "inheres in part of"^^xsd:string)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002314> :implies_presence_of)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002314> :involves)
+
+# Object Property: <http://purl.obolibrary.org/obo/RO_0002503> (towards)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/RO_0002503> "towards"^^xsd:string)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002503> :implies_presence_of)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002503> :involves)
+SubObjectPropertyOf(<http://purl.obolibrary.org/obo/RO_0002503> :phenotype_of)
+
+# Object Property: :annotated_gene (:annotated_gene)
+
+AnnotationAssertion(owl:deprecated :annotated_gene "true"^^xsd:boolean)
+
+# Object Property: :annotated_taxon (:annotated_taxon)
+
+AnnotationAssertion(owl:deprecated :annotated_taxon "true"^^xsd:boolean)
+
+# Object Property: :contains_clade (contains clade)
+
+AnnotationAssertion(rdfs:label :contains_clade "contains clade"^^xsd:string)
+InverseObjectProperties(:contains_clade :subclade_of)
+TransitiveObjectProperty(:contains_clade)
+
+# Object Property: :denotes_exemplar (:denotes_exemplar)
+
+SubObjectPropertyOf(:denotes_exemplar <http://purl.obolibrary.org/obo/IAO_0000219>)
+
+# Object Property: :has_ancestor (has ancestor)
+
+AnnotationAssertion(rdfs:label :has_ancestor "has ancestor"^^xsd:string)
+InverseObjectProperties(:has_ancestor :has_descendant)
+ObjectPropertyDomain(:has_ancestor <http://purl.obolibrary.org/obo/OBI_0100026>)
+ObjectPropertyRange(:has_ancestor <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Object Property: :has_ancestor_to_members (has ancestor to members)
+
+AnnotationAssertion(rdfs:label :has_ancestor_to_members "has ancestor to members"^^xsd:string)
+ObjectPropertyDomain(:has_ancestor_to_members :Clade)
+ObjectPropertyRange(:has_ancestor_to_members <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Object Property: :has_descendant (has descendant)
+
+AnnotationAssertion(rdfs:label :has_descendant "has descendant"^^xsd:string)
+ObjectPropertyDomain(:has_descendant <http://purl.obolibrary.org/obo/OBI_0100026>)
+ObjectPropertyRange(:has_descendant <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Object Property: :has_member (has member)
+
+AnnotationAssertion(rdfs:label :has_member "has member"^^xsd:string)
+InverseObjectProperties(:has_member :member_of)
+ObjectPropertyDomain(:has_member :Clade)
+ObjectPropertyRange(:has_member <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Object Property: :has_part_inhering_in (has part inhering in)
+
+AnnotationAssertion(rdfs:label :has_part_inhering_in "has part inhering in"^^xsd:string)
+
+# Object Property: :has_progenitor (has progenitor)
+
+AnnotationAssertion(rdfs:comment :has_progenitor "Relates a clade to a somewhat hypothetical member organism that possesses traits which are ancestral to all members of the clade."^^xsd:string)
+AnnotationAssertion(rdfs:label :has_progenitor "has progenitor"^^xsd:string)
+SubObjectPropertyOf(:has_progenitor :has_ancestor_to_members)
+SubObjectPropertyOf(:has_progenitor :has_member)
+ObjectPropertyDomain(:has_progenitor :Clade)
+ObjectPropertyRange(:has_progenitor <http://purl.obolibrary.org/obo/OBI_0100026>)
+
+# Object Property: :implies_presence_of (implies presence of)
+
+AnnotationAssertion(rdfs:label :implies_presence_of "implies presence of"^^xsd:string)
+
+# Object Property: :involves (involves)
+
+AnnotationAssertion(rdfs:comment :involves "A very general relation used for a \"model-free\" tagging approach to annotation."^^xsd:string)
+AnnotationAssertion(rdfs:label :involves "involves"^^xsd:string)
+ReflexiveObjectProperty(:involves)
+
+# Object Property: :may_have_state_value (may have state value)
+
+AnnotationAssertion(rdfs:comment :may_have_state_value "Relates a phylogenetic character to state values that may be held by CharacterStateDatums in a matrix. If generally useful this property could be migrated to CDAO."^^xsd:string)
+AnnotationAssertion(rdfs:label :may_have_state_value "may have state value"^^xsd:string)
+ObjectPropertyDomain(:may_have_state_value <http://purl.obolibrary.org/obo/CDAO_0000071>)
+ObjectPropertyRange(:may_have_state_value <http://purl.obolibrary.org/obo/CDAO_0000091>)
+
+# Object Property: :member_of (member of)
+
+AnnotationAssertion(rdfs:label :member_of "member of"^^xsd:string)
+ObjectPropertyDomain(:member_of <http://purl.obolibrary.org/obo/OBI_0100026>)
+ObjectPropertyRange(:member_of :Clade)
+
+# Object Property: :phenotype_of (phenotype of)
+
+AnnotationAssertion(rdfs:label :phenotype_of "phenotype of"^^xsd:string)
+
+# Object Property: :reflexive_develops_from (reflexive develops from)
+
+AnnotationAssertion(rdfs:label :reflexive_develops_from "reflexive develops from"^^xsd:string)
+TransitiveObjectProperty(:reflexive_develops_from)
+ReflexiveObjectProperty(:reflexive_develops_from)
+
+# Object Property: :reflexive_part_of (reflexive part of)
+
+AnnotationAssertion(rdfs:label :reflexive_part_of "reflexive part of"^^xsd:string)
+TransitiveObjectProperty(:reflexive_part_of)
+ReflexiveObjectProperty(:reflexive_part_of)
+
+# Object Property: :subclade_of (subclade of)
+
+AnnotationAssertion(rdfs:label :subclade_of "subclade of"^^xsd:string)
+TransitiveObjectProperty(:subclade_of)
+ObjectPropertyDomain(:subclade_of :Clade)
+ObjectPropertyRange(:subclade_of :Clade)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/CDAO_0000071> (Character)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/CDAO_0000071> <http://purl.obolibrary.org/obo/cdao.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CDAO_0000071> "Character"^^xsd:string)
+
+# Class: <http://purl.obolibrary.org/obo/CDAO_0000091> (CharacterStateDomain)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/CDAO_0000091> <http://purl.obolibrary.org/obo/cdao.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/CDAO_0000091> "CharacterStateDomain"^^xsd:string)
+
+# Class: <http://purl.obolibrary.org/obo/OBI_0100026> (organism)
+
+AnnotationAssertion(rdfs:isDefinedBy <http://purl.obolibrary.org/obo/OBI_0100026> <http://purl.obolibrary.org/obo/obi.owl>)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/OBI_0100026> "organism"^^xsd:string)
+
+# Class: :AnnotatedPhenotype (:AnnotatedPhenotype)
+
+AnnotationAssertion(rdfs:comment :AnnotatedPhenotype "A phenotypic quality exhibited by a particular organism in a described context, such as mutation or experimental manipulation."^^xsd:string)
+
+# Class: :PhenotypeAnnotation (:PhenotypeAnnotation)
+
+AnnotationAssertion(rdfs:comment :PhenotypeAnnotation "A statement that a gene is associated with an organism possessing a given phenotype, perhaps through mutation or experimental manipulation."^^xsd:string)
+AnnotationAssertion(owl:deprecated :PhenotypeAnnotation "true"^^xsd:boolean)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <http://orcid.org/0000-0002-8688-6599> (James P. Balhoff)
+
+AnnotationAssertion(rdfs:label <http://orcid.org/0000-0002-8688-6599> "James P. Balhoff"^^xsd:string)
+
+
+SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/RO_0000052>) :has_part_inhering_in)
+SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/RO_0000052>) :phenotype_of)
+SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/RO_0002503>) :phenotype_of)
+SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/BFO_0000051> :implies_presence_of) :implies_presence_of)
+SubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/RO_0000052> <http://purl.obolibrary.org/obo/BFO_0000050>) <http://purl.obolibrary.org/obo/RO_0002314>)
+SubObjectPropertyOf(ObjectPropertyChain(:implies_presence_of <http://purl.obolibrary.org/obo/BFO_0000050>) :implies_presence_of)
+SubObjectPropertyOf(ObjectPropertyChain(:implies_presence_of <http://purl.obolibrary.org/obo/BFO_0000051>) :implies_presence_of)
+SubObjectPropertyOf(ObjectPropertyChain(:implies_presence_of <http://purl.obolibrary.org/obo/RO_0002202>) :implies_presence_of)
+SubObjectPropertyOf(ObjectPropertyChain(:member_of :subclade_of) :member_of)
+SubObjectPropertyOf(ObjectPropertyChain(:subclade_of :has_progenitor) :has_ancestor_to_members)
+)
